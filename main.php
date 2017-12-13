@@ -23,6 +23,8 @@ if($car->isOpen()) {
   echo "The window is now open\n";
 }
 
+$house = new UsefulHouse();
+$house->toggle();
 
 try {
  $car->fillTank();
