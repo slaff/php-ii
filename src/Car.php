@@ -35,7 +35,7 @@ class Car {
     public function fillTank()
     {
        if($this->running) {
-          throw new \Exception("Car must be stopped before filling the tank");
+          throw new CarException("Car must be stopped before filling the tank");
        }
        
        echo "car filled";
