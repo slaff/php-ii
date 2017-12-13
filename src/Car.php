@@ -7,7 +7,7 @@ class Car {
     private $key;
     private $color;
 
-    public function __construct($color)
+    public function __construct(string $color)
     {
        $this->color = $color;
     }

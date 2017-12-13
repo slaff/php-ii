@@ -7,4 +7,9 @@ class UsefulHouse extends House {
    public function getBathRooms() {
       return $this->bathRooms;
    }
+
+   public function setCar(Car $car)
+   {
+      $this->car = $car;
+   }
 }
