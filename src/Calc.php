@@ -46,8 +46,8 @@ class Calc
   }
 
 
-  public function toString()
+  public function __toString()
   {
-     echo "Calculator";
+     return "Calculator";
   }
 } 

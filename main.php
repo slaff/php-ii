@@ -3,22 +3,16 @@ declare(strict_types=1);
 
 require __DIR__.'/vendor/autoload.php';
 
-use Libs\{Calc, SciCalc, Car, UsefulHouse, CarException};
+use Libs\{User, Db\Repository };
 
-$class = new class() {
-  public function doSomething() {
-     echo "Done from anonymous class";
-  }
-};
+// 1. using ORM => you get an object which is instance of the User class
 
+$repository = new Repository();
 
-$f = function() {
-  echo "123";
-};
+$user = $repository->findById(13);
 
 
-$f();
+// 2. Persist information
+$user->age = 34;
 
-echo "\n";
-
-$class->doSomething();
+$repository->persist($user); // UPDATE ... SET age=34 WHERE id=13;
