@@ -9,13 +9,20 @@ class Car {
     private $key;
     private $color;
     private $running = false;
+    
+    // This is a static property
+    public static $usage = 0;
 
     public function __construct(string $color)
     {
        $this->color = $color;
        $this->running  = true;
+
+       // usage of static property
+       self::$usage = self::$usage + 1; 
     }
 
+   // This is an example of static method
    public static function getWheels() {
       return static::WHEELS;
    } 

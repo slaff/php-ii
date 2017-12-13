@@ -5,14 +5,8 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{Calc, SciCalc, Car, UsefulHouse, CarException};
 
-$car = new Car("green");
-$anotherCar = clone $car;
+$car1 = new Car("blue");
+$car2 = new Car("red");
+$car3 = new Car("yellow");
 
-
-$house = new UsefulHouse();
-$house->setCar($car);
-
-
-echo $anotherCar->getColor()."\n";
-
-echo "Works";
+echo Car::$usage;
