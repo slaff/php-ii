@@ -12,10 +12,6 @@ final class SuperCar extends Car
      $this->color = "blue";
    }
 
-   public function __toString() {
-      return "SuperCar: red color: OrangeCar";
-   }
-
    public function __destruct() {
       echo "SuperCar was destroyed";
    }

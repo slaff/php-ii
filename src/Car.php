@@ -30,5 +30,8 @@ class Car {
         echo "You need ". self::WHEELS . " wheels drive. Have a nice trip";
     }
 
+    public function __toString() {
+      return __CLASS__.": ".$this->color;
+   }
 }
 
