@@ -14,14 +14,9 @@ try {
 catch(CarException $ex) {
   echo "this is a car exception\n";
 }
-catch(\Error $ex) {
-  // doSomethingHer()
-}
-catch(\Exception $ex) {
+catch(\Error | \Exception $ex) {
  echo $ex->getMessage()."\n";
  echo $ex->getTraceAsString()."\n";
-
- throw $ex;
 }
 finally {
   echo "\nAlways executed\n";
