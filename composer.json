@@ -1,0 +1,10 @@
+{
+    "require": {
+        "mpdf/mpdf": "^7.0"
+    },
+    "autoload": {
+	 "psr-4": {
+		"Libs\\": "src"
+	 }
+     }
+}
