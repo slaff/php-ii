@@ -4,8 +4,12 @@ namespace Libs;
 class Calc 
 {
   const PI = 3.14; // constant
+  protected $memory = 0;   // property -> variable
+  protected $owner;
 
-  private $memory;
+  public function __construct($owner) { // method -> function
+     $this->owner = $owner;
+  }
 
   public function plus($a, $b) {
     $this->memory = $a+$b;
@@ -35,5 +39,9 @@ class Calc
     // π * pow(r, 2)  
     $result = self::PI * pow($radius, 2); // call constant from the same class
     return $result;
+  }
+
+  private function clear() {
+     $this->memory = 0;
   }
 } 
