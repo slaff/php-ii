@@ -1,6 +1,17 @@
 <?php
 declare(strict_types=1);
 
+/**
+
+             Throwable
+         /                  \
+       Error              Exception
+     /       
+  ArgumentCountError ...       \ 
+                              CarException 
+*/
+
+
 require __DIR__.'/vendor/autoload.php';
 
 use Libs\{Calc, SciCalc, Car, UsefulHouse, CarException};
