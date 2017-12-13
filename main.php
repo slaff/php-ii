@@ -10,3 +10,4 @@ $car2 = new Car("red");
 $car3 = new Car("yellow");
 
 echo Car::$usage;
+echo Car::getWheels();

@@ -24,6 +24,8 @@ class Car {
 
    // This is an example of static method
    public static function getWheels() {
+      // $this->getColor(); // <--- $this is NOT allowed in static method
+
       return static::WHEELS;
    } 
  
