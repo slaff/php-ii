@@ -3,6 +3,8 @@ namespace Libs;
 
 class Car {
 
+    use AutomaticWindows;
+
     const WHEELS = 4;
     private $key;
     private $color;

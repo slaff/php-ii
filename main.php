@@ -17,6 +17,11 @@ require __DIR__.'/vendor/autoload.php';
 use Libs\{Calc, SciCalc, Car, UsefulHouse, CarException};
 
 $car = new Car("green");
+$car->toggle();
+
+if($car->isOpen()) {
+  echo "The window is now open\n";
+}
 
 
 try {
