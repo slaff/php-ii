@@ -44,4 +44,10 @@ class Calc
   protected function clear() {
      $this->memory = 0;
   }
+
+
+  public function toString()
+  {
+     echo "Calculator";
+  }
 } 

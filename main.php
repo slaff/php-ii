@@ -5,9 +5,20 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{Calc, SciCalc, Car, UsefulHouse, CarException};
 
-$car1 = new Car("blue");
-$car2 = new Car("red");
-$car3 = new Car("yellow");
+$class = new class() {
+  public function doSomething() {
+     echo "Done from anonymous class";
+  }
+};
 
-echo Car::$usage;
-echo Car::getWheels();
+
+$f = function() {
+  echo "123";
+};
+
+
+$f();
+
+echo "\n";
+
+$class->doSomething();
