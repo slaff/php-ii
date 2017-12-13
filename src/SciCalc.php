@@ -6,4 +6,12 @@ class SciCalc extends Calc {
    {
       return (float)$this->memory;
    }
+
+   public function plus($a, $b) {
+      echo "HERE";
+   }
+
+   public function clear() { 
+      return parent::clear();
+   }
 }

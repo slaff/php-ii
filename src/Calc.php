@@ -41,7 +41,7 @@ class Calc
     return $result;
   }
 
-  private function clear() {
+  protected function clear() {
      $this->memory = 0;
   }
 } 

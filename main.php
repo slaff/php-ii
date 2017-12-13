@@ -1,19 +1,20 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-use Libs\{Calc, SciCalc};
+use Libs\{Calc, SciCalc, Car, SuperCar};
 
-$calc = new Calc("John");
-$calc->plus(2,3);
-echo $calc->getMemory();
-
-// pizza 20cm diameter
-echo $calc->areaCircle(10);
-echo "\n";
-echo $calc->multiply(3,4);
-echo "\n";
-echo Calc::PI;
-
-echo "\n";
 $sciCalc = new SciCalc("Barbie");
+$sciCalc->plus(1,2);
+$sciCalc->clear();
 echo $sciCalc->getMemoryAsFloat();
+
+echo "\n";
+
+$car = new Car("yellow");
+echo $car->getColor();
+
+echo "\n";
+
+$superCar = new SuperCar();
+$superCar->changeColor();
+echo $superCar->getColor();
