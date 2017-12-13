@@ -6,8 +6,8 @@ require __DIR__.'/vendor/autoload.php';
 use Libs\{Calc, SciCalc, Car, UsefulHouse};
 
 
-function test(?string $x) {
-  echo "Test $x";
+function test(?string $x) : string {
+  return "Test $x";
 }
 
 
@@ -18,4 +18,4 @@ $house = new UsefulHouse();
 $house->setCar($car);
 
 
-test(null);
+echo test(null);
