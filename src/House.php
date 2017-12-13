@@ -2,6 +2,8 @@
 namespace Libs;
 
 abstract class House {
+  use AutomaticWindows;
+
   protected $rooms = 0;
   
   public function setRooms($rooms)

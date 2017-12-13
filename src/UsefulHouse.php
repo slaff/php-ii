@@ -2,7 +2,6 @@
 namespace Libs;
 
 class UsefulHouse extends House {
-   use AutomaticWindows;
 
    private $bathRooms = 1;
  
