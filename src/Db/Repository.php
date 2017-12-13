@@ -18,6 +18,14 @@ name: John
 age: 22
 */
 
+     // Hydration: How from an array of data to create an object with 
+     // that data in id
+     $row[
+       'name' => "John",
+       'age' => 20, //..
+     ];
+      
+     // ClassProperties hydration, Class Methods getName(), setName()
      $user = new User();
      $user->name = "John";
      $user->age = 22;
