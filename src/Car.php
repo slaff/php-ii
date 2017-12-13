@@ -19,8 +19,12 @@ class Car {
        $this->running  = true;
 
        // usage of static property
-       self::$usage = self::$usage + 1; 
-    }
+       static::$usage = self::$usage + 1; 
+   }
+
+   public function getUsage() {
+      return self::$usage;
+   }
 
    // This is an example of static method
    public static function getWheels() {
