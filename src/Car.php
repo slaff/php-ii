@@ -6,10 +6,12 @@ class Car {
     const WHEELS = 4;
     private $key;
     private $color;
+    private $running = false;
 
     public function __construct(string $color)
     {
        $this->color = $color;
+       $this->running  = true;
     }
 
     public function getColor()
@@ -28,6 +30,15 @@ class Car {
 
     public function start () {
         echo "You need ". self::WHEELS . " wheels drive. Have a nice trip";
+    }
+  
+    public function fillTank()
+    {
+       if($this->running) {
+          throw new \Exception("Car must be stopped before filling the tank");
+       }
+       
+       echo "car filled";
     }
 
     public function __toString() {

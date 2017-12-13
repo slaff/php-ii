@@ -5,17 +5,24 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{Calc, SciCalc, Car, UsefulHouse};
 
-
-function test(?string $x) : string {
-  return "Test $x";
-}
-
-
 $car = new Car("green");
 
-// Typehinting: int, float, string, array and classNames 
-$house = new UsefulHouse();
-$house->setCar($car);
 
+try {
+ $car->fillTank();
+}
+catch(\Error $ex) {
+  // doSomethingHer()
+}
+catch(\Exception $ex) {
+ echo $ex->getMessage()."\n";
+ echo $ex->getTraceAsString()."\n";
 
-echo test(null);
+ throw $ex;
+}
+finally {
+  echo "\nAlways executed\n";
+}
+
+echo "Works";
+
