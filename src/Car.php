@@ -16,9 +16,18 @@ class Car {
        $this->running  = true;
     }
 
+   public static function getWheels() {
+      return static::WHEELS;
+   } 
+ 
+
     public function getColor()
     {
       return $this->color;
+    }
+
+    public function setColor($color) {
+      $this->color = $color;
     }
 
     public function drive($key = 'yes') {

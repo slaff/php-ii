@@ -12,5 +12,6 @@ class UsefulHouse extends House {
    public function setCar(Car $car)
    {
       $this->car = $car;
+      $this->car->setColor("blue");
    }
 }
