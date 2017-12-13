@@ -1,7 +1,7 @@
 <?php
 namespace Libs;
 
-class SuperCar extends Car
+final class SuperCar extends Car
 {
    public function __construct()
    {
@@ -10,5 +10,13 @@ class SuperCar extends Car
 
    public function changeColor() {
      $this->color = "blue";
+   }
+
+   public function __toString() {
+      return "SuperCar: red color: OrangeCar";
+   }
+
+   public function __destruct() {
+      echo "SuperCar was destroyed";
    }
 }

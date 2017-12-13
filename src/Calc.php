@@ -11,7 +11,7 @@ class Calc
      $this->owner = $owner;
   }
 
-  public function plus($a, $b) {
+  final public function plus($a, $b) {
     $this->memory = $a+$b;
     return $this->memory;
   }

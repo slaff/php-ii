@@ -1,20 +1,12 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-use Libs\{Calc, SciCalc, Car, SuperCar};
-
-$sciCalc = new SciCalc("Barbie");
-$sciCalc->plus(1,2);
-$sciCalc->clear();
-echo $sciCalc->getMemoryAsFloat();
-
-echo "\n";
-
-$car = new Car("yellow");
-echo $car->getColor();
-
-echo "\n";
+use Libs\{Calc, SciCalc, Car, SuperCar, PerfectCar};
 
 $superCar = new SuperCar();
-$superCar->changeColor();
-echo $superCar->getColor();
+echo $superCar;
+
+echo "\n";
+
+unset($superCar);
+
