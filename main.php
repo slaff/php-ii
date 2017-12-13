@@ -1,10 +1,6 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-use Libs\{Calc, SciCalc, Car, SuperCar, PerfectCar, House, UsefulHouse};
+use Libs\{Calc, SciCalc, Bottle};
 
-// NOT ALLOWED: create objects from abstract classes
-// $house = new House();
-
-$house = new UsefulHouse();
-echo $house->getBathRooms();
+$bottle = new Bottle();
