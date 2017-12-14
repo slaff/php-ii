@@ -21,8 +21,7 @@ class Repository
       // $id=" =0; DELETE FROM customers;   "  SQL injection!  
  
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindParam(':id', $id);
-      $stmt->execute();
+      $stmt->execute([':id' => $id]);
 
       $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
