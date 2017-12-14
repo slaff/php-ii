@@ -5,8 +5,8 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
-$input = 'john.smith@mnt.cy';
-$pattern = '/([\w|\.]+[^\.])@(\w+)\.(\w+)/';
+$input = '+357 12 12-12 Limassol';
+$pattern = '/^([\d|\+][\d-]*) ([\d\s-]*) (\w*)$/';
 
 if(preg_match($pattern,$input, $matches)) {
    var_dump($matches);
