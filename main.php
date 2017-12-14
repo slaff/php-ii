@@ -5,25 +5,17 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
-// TODO: load composer.json
+/*
+Restful service example
 
-$content = file_get_contents(__DIR__.'/composer.json');
+http://<something>/user
 
-//       turn composer.json content into an array
-$data = json_decode($content, true);
 
-//       display that array
-// var_dump($data);
-
-$newArray = [
-   "key" => "value",
-   "key2" => [ "oho" => "one", "two", "three"],
-   0 => "ten"
-];
-
-$content = json_encode($newArray);
-echo $content;
-
+POST http://<something>/user and include in the body the data for the car
+DELETE http://<something>/user/<id>
+GET http://<something>/user/<id>
+PUT http://<something>/user/<id>
+*/
 
 
 exit;
