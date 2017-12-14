@@ -5,6 +5,16 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
+$input = 'john.smith@mnt.cy';
+$pattern = '/([\w|\.]+[^\.])@(\w+)\.(\w+)/';
+
+if(preg_match($pattern,$input, $matches)) {
+   var_dump($matches);
+}
+
+exit;
+
+
 // 1. using ORM => you get an object which is instance of the User class
 
 $config = include __DIR__.'/config/application.config.php';
