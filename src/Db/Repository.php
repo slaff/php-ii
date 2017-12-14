@@ -2,35 +2,39 @@
 namespace Libs\Db;
 
 // Example of a RepositoryClass pattern
-class Repository  {
+class Repository  
+{
+   private $pdo;
+
+   public function __construct($dbConfig) 
+   {
+       	$this->pdo = new \PDO($dbConfig['dsn'],
+                             $dbConfig['username'],
+                             $dbConfig['password'],
+                             $dbConfig['options']
+                             );
+   }
 
    public function findById(int $id)
    {
-     // TODO: SELECT SQL and find user with id== $id
+      $sql = "SELECT * FROM customers WHERE id=$id";     
+ 
+      $stmt = $this->pdo->query($sql);
+      $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-/*
+      if(!count($rows)) {
+         return null;
+      }
 
-Represents a record in the users table with id 13
+      // ClassProperties hydration, Class Methods getName(), setName()
+      $user = new User();
 
-For example:
-id: 13
-name: John
-age: 22
-*/
+      $row = $rows[0];
+      foreach($row as $key => $value) {
+         $user->{$key} = $value; 
+      }
 
-     // Hydration: How from an array of data to create an object with 
-     // that data in id
-     $row[
-       'name' => "John",
-       'age' => 20, //..
-     ];
-      
-     // ClassProperties hydration, Class Methods getName(), setName()
-     $user = new User();
-     $user->name = "John";
-     $user->age = 22;
-
-     return $user;
+      return $user;
    }
 
    public function persist($object)
@@ -38,5 +42,4 @@ age: 22
       // TODO: Store the information into the database.
       return true;
    }
-
 }

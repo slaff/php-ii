@@ -7,9 +7,11 @@ use Libs\{User, Db\Repository };
 
 // 1. using ORM => you get an object which is instance of the User class
 
-$repository = new Repository();
+$config = include __DIR__.'/config/application.config.php';
 
-$user = $repository->findById(13);
+$repository = new Repository($config['db']);
+
+$user = $repository->findById(3);
 
 
 // 2. Persist information
