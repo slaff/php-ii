@@ -5,18 +5,13 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
-/*
-Restful service example
+$url = "https://maps.googleapis.com/maps/api/geocode/json?address=Larnaca,Cyprus";
 
-http://<something>/user
+$json = file_get_contents($url);
 
+$data = json_decode($json, true);
 
-POST http://<something>/user and include in the body the data for the car
-DELETE http://<something>/user/<id>
-GET http://<something>/user/<id>
-PUT http://<something>/user/<id>
-*/
-
+var_dump($data);
 
 exit;
 
