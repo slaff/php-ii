@@ -5,12 +5,18 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
-$input = '+357 12 12-12 Limassol';
-$pattern = '/^([\d|\+][\d-]*) ([\d\s-]*) (\w*)$/';
+$xml = simplexml_load_file( __DIR__.'/data/cars.xml' );
 
-if(preg_match($pattern,$input, $matches)) {
-   var_dump($matches);
+foreach($xml->car as $car) {
+  if($car->color == "black") {
+     echo $car->owner."\n";  
+  }
 }
+
+$xml->car[1]->owner = "Aphrodite";
+
+echo $xml->car[1]->owner;
+
 
 exit;
 

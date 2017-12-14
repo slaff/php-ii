@@ -1,0 +1,17 @@
+<cars>
+   <car>
+     <owner>Tasos</owner>
+     <license>123456789</license>
+     <color>black</color>
+   </car>
+   <car>
+     <owner>Periklis</owner>
+     <license>WWW 123</license>
+     <color>yellow</color>
+   </car>
+   <car>
+     <owner>Kypriana</owner>
+     <license>KYW 038</license>
+     <color>red</color>
+   </car>
+</cars>
