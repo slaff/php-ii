@@ -17,9 +17,13 @@ class Repository
 
    public function findById(int $id)
    {
-      $sql = "SELECT * FROM customers WHERE id=$id";     
+      $sql = "SELECT * FROM customers WHERE id=? "; 
+      // $id=" =0; DELETE FROM customers;   "  SQL injection!  
  
-      $stmt = $this->pdo->query($sql);
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindParam(1, $id);
+      $stmt->execute();
+
       $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
       if(!count($rows)) {

@@ -13,6 +13,7 @@ $repository = new Repository($config['db']);
 
 $user = $repository->findById(3);
 
+var_dump($user);
 
 // 2. Persist information
 $user->age = 34;
