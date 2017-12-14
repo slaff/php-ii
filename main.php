@@ -5,17 +5,25 @@ require __DIR__.'/vendor/autoload.php';
 
 use Libs\{User, Db\Repository };
 
-$xml = simplexml_load_file( __DIR__.'/data/cars.xml' );
+// TODO: load composer.json
 
-foreach($xml->car as $car) {
-  if($car->color == "black") {
-     echo $car->owner."\n";  
-  }
-}
+$content = file_get_contents(__DIR__.'/composer.json');
 
-$xml->car[1]->owner = "Aphrodite";
+//       turn composer.json content into an array
+$data = json_decode($content, true);
 
-echo $xml->car[1]->owner;
+//       display that array
+// var_dump($data);
+
+$newArray = [
+   "key" => "value",
+   "key2" => [ "oho" => "one", "two", "three"],
+   0 => "ten"
+];
+
+$content = json_encode($newArray);
+echo $content;
+
 
 
 exit;
