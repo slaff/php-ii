@@ -17,11 +17,11 @@ class Repository
 
    public function findById(int $id)
    {
-      $sql = "SELECT * FROM customers WHERE id=? "; 
+      $sql = "SELECT * FROM customers WHERE id= :id "; 
       // $id=" =0; DELETE FROM customers;   "  SQL injection!  
  
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindParam(1, $id);
+      $stmt->bindParam(':id', $id);
       $stmt->execute();
 
       $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -44,6 +44,9 @@ class Repository
    public function persist($object)
    {
       // TODO: Store the information into the database.
+
+      // PLUS Points: Use prepared statements to store the data
+
       return true;
    }
 }
